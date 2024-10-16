@@ -16,7 +16,7 @@ import {
   useRegisterPersonnelUserMutation,
 } from "../../../lib/API/UsersApi";
 import { Navigate, useNavigate } from "react-router-dom";
-import { ProjectDescriptionSystemType } from "../../../lib/constants/ProjectPackage";
+import { ProjectDescriptionSystemType } from "../../../lib/constants/ProjectCostEstimations";
 
 const ClientRegistrationForm = () => {
   const navigate = useNavigate();

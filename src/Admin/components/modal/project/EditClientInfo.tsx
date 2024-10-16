@@ -23,7 +23,7 @@ import {
 import Loader from "../../../../main/components/Loader";
 import { toast } from "react-toastify";
 import { IoIosSave } from "react-icons/io";
-import { ProjectDescriptionSystemType } from "../../../../lib/constants/ProjectPackage";
+import { ProjectDescriptionSystemType } from "../../../../lib/constants/ProjectCostEstimations";
 
 interface IEdit {
   projId: string;
