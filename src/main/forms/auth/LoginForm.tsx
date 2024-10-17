@@ -125,6 +125,7 @@ const LoginPage = () => {
         </form>
       </div>
 
+      {/* Project Cost Estimations */}
       <div className="flex flex-col items-center justify-center w-full lg:w-1/2 mx-auto">
         <h4 className="font-semibold text-orange-500 tracking-wide mb-2">
           Choose the Right Plan for You
