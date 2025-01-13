@@ -15,7 +15,7 @@ interface IProjId {
 // export const getClientProjId = (userEmail: string) => {
 export const getClientProjId = () => {
   const userEmail = useUserEmail();
-  return useQuery<IProjId, Error>({
+  return useQuery<IProjId[], Error>({
     queryKey: ["projId", userEmail],
     queryFn: async () => {
       const response = await api.get(`api/Client/GetClientProjectId`, {

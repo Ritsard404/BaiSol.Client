@@ -183,7 +183,7 @@ function App() {
           </Route>
         ) : userRole === "Client" ? (
           <Route element={<ClientLayout />}>
-            <Route path="/" element={<ClientPage />} />
+            <Route path="/:projId" element={<ClientPage />} />
             <Route
               path="quotation/:projId"
               element={<ClientProjectQuotationPage />}

@@ -34,14 +34,11 @@ const ClientProjectReport: React.FC<{ projectId?: string }> = ({
   const { data: projActualWorkDate, isLoading: isLoadingWorkDates } =
     getProjectActualWorkedDate(projId!);
 
-  if (!projectId) {
-    if (
-      (projId && clientProjId && projId !== clientProjId.projId) ||
-      !clientProjId
-    ) {
-      return <Navigate to="/" />;
-    }
-  }
+  // if (!projectId) {
+  //   if ((projId && clientProjId) || !clientProjId) {
+  //     return <Navigate to="/" />;
+  //   }
+  // }
 
   if (
     isloadingId ||

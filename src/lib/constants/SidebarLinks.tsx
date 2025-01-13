@@ -77,7 +77,7 @@ export const getClientSidebarLinks = (clientProjId?: string): SidebarLink[] => [
   {
     key: "dashboard",
     label: "Dashboard",
-    path: "/",
+    path: `/${clientProjId}`,
     icon: <RxDashboard size={23} className="min-w-max" />,
   },
   {

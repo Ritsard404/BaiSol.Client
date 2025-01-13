@@ -10,7 +10,7 @@ import { getPaymentProgress } from "../../lib/API/Project/PaymentAPI";
 import { getProjectProgress } from "../../lib/API/Project/GanttAPI";
 
 const ClientPage = () => {
-  // const { projId } = useParams<{ projId: string }>();
+  const { projId } = useParams<{ projId: string }>();
 
   const { data: clientProjId, isLoading } = getClientProjId();
 
@@ -19,21 +19,22 @@ const ClientPage = () => {
     return <Loader />;
   }
 
-  if (clientProjId === null) {
+  if (projId === null || clientProjId === null) {
     return <div>No project yet...</div>;
   }
 
   // Now safely access `projId` after validating that `clientProjId` is not null
-  const validatedClientProjId = clientProjId!.projId;
+  const validatedClientProjId = projId;
+  // const validatedClientProjId = clientProjId!.projId;
 
   const { data: infos, isLoading: isLoadingCPI } = getClientProjectInfo(
     validatedClientProjId
   );
   const { data: payProg, isLoading: isLoadingPay } = getPaymentProgress(
-    validatedClientProjId
+    validatedClientProjId!
   );
   const { data: projProg, isLoading: isLoadingproj } = getProjectProgress(
-    validatedClientProjId
+    validatedClientProjId!
   );
 
   // Check if any of the data is still loading

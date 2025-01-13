@@ -151,7 +151,7 @@ const ProjectHistories: React.FC<{
                       <span className="text-gray-700">
                         {project.actualStarted} - {project.actualEnded}{" "}
                         <span className="text-gray-500">
-                          ({project.actualdWorkingDays} days)
+                          ({project.actualdWorkingDays} day/s)
                         </span>
                       </span>
                     </div>

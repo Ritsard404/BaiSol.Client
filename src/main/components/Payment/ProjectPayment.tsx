@@ -37,7 +37,7 @@ const ProjectPayment: React.FC<{ isAdmin?: boolean }> = ({ isAdmin }) => {
   } = getClientPayments(projId!);
 
   const { data: totalToPay, isLoading: isLoadingTotalExpense } =
-    getProjectExpense(clientProjId?.projId ?? projId);
+    getProjectExpense(projId);
 
   const paymentArray = Array.isArray(payment) ? payment : [];
   const acknowledgePayment = useAcknowledgePayment();
@@ -78,13 +78,13 @@ const ProjectPayment: React.FC<{ isAdmin?: boolean }> = ({ isAdmin }) => {
 
   if (isLoading || isLoadingTotalExpense) return <Loader />;
 
-  if ((error || paymentArray.length === 0) && !isAdmin) {
-    return <Navigate to="/" />;
-  }
+  // if ((error || paymentArray.length === 0) && !isAdmin) {
+  //   return <Navigate to="/" />;
+  // }
 
-  if (projId && clientProjId && projId !== clientProjId.projId && !isAdmin) {
-    return <Navigate to="/" />;
-  }
+  // if (projId && clientProjId && projId !== clientProjId.projId && !isAdmin) {
+  //   return <Navigate to="/" />;
+  // }
 
   const handleViewInfo = (info: IAllPayment) => {
     setPaymentInfo(info);
